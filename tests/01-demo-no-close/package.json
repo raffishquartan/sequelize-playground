@@ -1,0 +1,9 @@
+{
+  "name": "01-demo-no-close",
+  "version": "0.0.0",
+  "description": "00-demo without Sequelize::close call, demonstrating hang -- /home/christo/repos/sequelize/playground/tests/00-demo",
+  "private": true,
+  "dependencies": {
+    "q": "1.1.2"
+  }
+}
