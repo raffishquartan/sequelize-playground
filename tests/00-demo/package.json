@@ -1,0 +1,9 @@
+{
+  "name": "00-demo",
+  "version": "0.0.0",
+  "description": "Demonstration of a Sequelize test script",
+  "private": true,
+  "dependencies": {
+    "q": "1.1.2"
+  }
+}
