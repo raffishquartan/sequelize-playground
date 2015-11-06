@@ -1,0 +1,1297 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"npm",
+				"npm_version"
+			],
+			[
+				"AppObj",
+				"AppObjItemView"
+			],
+			[
+				"version_in",
+				"version_info_model"
+			],
+			[
+				"Persis",
+				"PersistentModel"
+			],
+			[
+				"util",
+				"util_route_failure"
+			],
+			[
+				"proc_chan",
+				"proc_changepassword_submitted"
+			],
+			[
+				"change",
+				"changepassword_form"
+			],
+			[
+				"STR",
+				"stringify"
+			],
+			[
+				"new-pass",
+				"new-password-check"
+			],
+			[
+				"changepas",
+				"changepassword_form_view"
+			],
+			[
+				"Local",
+				"LocalDataForValidation"
+			],
+			[
+				"changepassw",
+				"changepassword_form"
+			],
+			[
+				"get",
+				"get_scope_names"
+			],
+			[
+				"sc",
+				"scopes"
+			],
+			[
+				"keys",
+				"keys_required_for_signup"
+			],
+			[
+				"handl",
+				"handle_route_function_rejected_promise"
+			],
+			[
+				"handle",
+				"handle_passport_callback_rejected_promise"
+			],
+			[
+				"passport_",
+				"passport_callback_rejected_promise_handler"
+			],
+			[
+				"check_pas",
+				"check_password_sync"
+			],
+			[
+				"reload",
+				"reload_and_return_password_check_result"
+			],
+			[
+				"catch_er",
+				"catch_error_in_get_password_check"
+			],
+			[
+				"catch",
+				"catch_error_in_increment"
+			],
+			[
+				"reset",
+				"reset_local_unsuccessful_logins"
+			],
+			[
+				"increment",
+				"increment_local_unsuccessful_logins"
+			],
+			[
+				"provider",
+				"provider_find_fn"
+			],
+			[
+				"reac",
+				"reactivate_and_save"
+			],
+			[
+				"make_p",
+				"make_passport_reactivate_strategy_callback"
+			],
+			[
+				"ser",
+				"server_q_longstacksupport"
+			],
+			[
+				"logged",
+				"logged_in_cookie_name"
+			],
+			[
+				"a-",
+				"a-zA-Z_"
+			],
+			[
+				"a-z",
+				"a-zA-Z0-9"
+			],
+			[
+				"twitt",
+				"twitter_consumer_key"
+			],
+			[
+				"google_cli",
+				"google_client_secret"
+			],
+			[
+				"google_cl",
+				"google_client_id"
+			],
+			[
+				"cur",
+				"current_val_regex"
+			],
+			[
+				"current_val_",
+				"current_val_rel_filepath"
+			],
+			[
+				"output",
+				"output_regex_string"
+			],
+			[
+				"valia",
+				"validation_regex"
+			],
+			[
+				"current_val",
+				"current_value"
+			],
+			[
+				"valid",
+				"validation_regex"
+			],
+			[
+				"curren",
+				"current_val_filepath"
+			],
+			[
+				"de",
+				"desc"
+			],
+			[
+				"outpu",
+				"outputs"
+			],
+			[
+				"current",
+				"current_value_install_dir"
+			],
+			[
+				"vali",
+				"validation_regex"
+			],
+			[
+				"default_",
+				"default_rel_filepath"
+			],
+			[
+				"input",
+				"input_val_regex"
+			],
+			[
+				"def",
+				"default_val_regex"
+			],
+			[
+				"output_valu",
+				"output_value_file"
+			],
+			[
+				"react",
+				"reactivate_fb_callback"
+			],
+			[
+				"reacti",
+				"reactivate_fb_auth"
+			],
+			[
+				"proc_local_reac",
+				"proc_local_reactivate"
+			],
+			[
+				"trigger",
+				"trigger_after_reactivate"
+			],
+			[
+				"loca",
+				"local_email"
+			],
+			[
+				"sti",
+				"stringify"
+			],
+			[
+				"databse",
+				"database_config"
+			],
+			[
+				"databas",
+				"database_config"
+			],
+			[
+				"connect",
+				"connected_auth_providers"
+			],
+			[
+				"twiter",
+				"twitter_disconnect_path"
+			],
+			[
+				"disconnect",
+				"disconnect_callback"
+			],
+			[
+				"header",
+				"header_view"
+			],
+			[
+				"proc_connect_local",
+				"proc_connect_local_submitted"
+			],
+			[
+				"region",
+				"region_profile_data"
+			],
+			[
+				"password",
+				"password_field"
+			],
+			[
+				"val",
+				"val_errs"
+			],
+			[
+				"show",
+				"show_val_errs"
+			],
+			[
+				"api_util",
+				"api_util_config"
+			],
+			[
+				"FLASH_mes",
+				"flash_message_model"
+			],
+			[
+				"flash_mes",
+				"flash_message_model"
+			],
+			[
+				"api_",
+				"api_util_config"
+			],
+			[
+				"redire",
+				"redirect_to_profile"
+			],
+			[
+				"flash_me",
+				"flash_message_key"
+			],
+			[
+				"api",
+				"api_util_config"
+			],
+			[
+				"twit",
+				"twitter_connected"
+			],
+			[
+				"profile_dat",
+				"profile_data_view"
+			],
+			[
+				"query",
+				"query_string"
+			],
+			[
+				"get_user_profile_ad",
+				"get_user_profile_admin_promise"
+			],
+			[
+				"succe",
+				"successRedirect"
+			],
+			[
+				"success",
+				"successReturnToOrRedirect"
+			],
+			[
+				"UserProfile",
+				"UserProfileConnectUrls"
+			],
+			[
+				"get_user",
+				"get_user_profile_connect_urls"
+			],
+			[
+				"get_user_",
+				"get_user_profile_connect_urls_promise"
+			],
+			[
+				"disconn",
+				"disconnect_twitter_and_save"
+			],
+			[
+				"author",
+				"authorize"
+			],
+			[
+				"get_fac",
+				"get_facebook_connect_url"
+			],
+			[
+				"facebook",
+				"facebook-access-clicked"
+			],
+			[
+				"get_face",
+				"get_facebook_google_display_mode_from_ui_scale"
+			],
+			[
+				"access_fac",
+				"access_facebook_auth"
+			],
+			[
+				"fitl",
+				"filter_generator"
+			],
+			[
+				"pass",
+				"password"
+			],
+			[
+				"ini",
+				"initialize_navitems"
+			],
+			[
+				"init",
+				"initialize"
+			],
+			[
+				"submit",
+				"submit_clicked"
+			],
+			[
+				"pare",
+				"parse_level"
+			],
+			[
+				"esc",
+				"escape_text"
+			],
+			[
+				"logg",
+				"logger_builder"
+			],
+			[
+				"assemb",
+				"assemble_log_entry"
+			],
+			[
+				"js_app",
+				"js_app_files_in_dir"
+			],
+			[
+				"AppOb",
+				"AppObjFormItemView"
+			],
+			[
+				"En",
+				"EntryApp"
+			],
+			[
+				"signup",
+				"signup_view"
+			],
+			[
+				"invali",
+				"invalid_char_password"
+			],
+			[
+				"form",
+				"form_data"
+			],
+			[
+				"valida",
+				"validation_errors"
+			],
+			[
+				"_pas",
+				"_passwordField"
+			],
+			[
+				"_usernae",
+				"_usernameField"
+			],
+			[
+				"access",
+				"access_local_login"
+			],
+			[
+				"process_o",
+				"process_local_signup"
+			],
+			[
+				"access_",
+				"process_access_login"
+			],
+			[
+				"sign",
+				"signup_view"
+			],
+			[
+				"passwo",
+				"password_string"
+			],
+			[
+				"acc",
+				"access_local"
+			],
+			[
+				"user-ac",
+				"user-access-password"
+			],
+			[
+				"has_pas",
+				"has_password_radio_flag"
+			],
+			[
+				"in",
+				"invalid_email"
+			],
+			[
+				"unhashe",
+				"unhashed_password"
+			],
+			[
+				"unhas",
+				"unhashed_password"
+			],
+			[
+				"js_app_files",
+				"js_app_files_not_router_in_dir"
+			],
+			[
+				"func",
+				"functions"
+			],
+			[
+				"session",
+				"session_info_json"
+			],
+			[
+				"https",
+				"https_port"
+			],
+			[
+				"server",
+				"server_config"
+			],
+			[
+				"htt",
+				"http_port"
+			],
+			[
+				"http_re",
+				"https_redirect"
+			],
+			[
+				"redirect",
+				"redirect_to"
+			],
+			[
+				"create",
+				"create_https_server"
+			],
+			[
+				"create_ht",
+				"create_http_redirect_server"
+			],
+			[
+				"crate_htt",
+				"create_http_redirect_server"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 355.0,
+		"selected_items":
+		[
+			[
+				"mark",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"sql",
+				"SQL Beautifier: Format Current SQL File"
+			],
+			[
+				"markdown",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"markd",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"markdow",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"install p",
+				"Package Control: Install Package"
+			],
+			[
+				"install pa",
+				"Package Control: Install Package"
+			],
+			[
+				"preference",
+				"Preferences: Settings - User"
+			],
+			[
+				"preferen",
+				"Preferences: Settings - Default"
+			],
+			[
+				"prefer",
+				"Preferences: Settings - User"
+			],
+			[
+				"prefs",
+				"Preferences: Settings - User"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"key",
+				"Preferences: Key Bindings - User"
+			],
+			[
+				"bind",
+				"Preferences: Key Bindings - User"
+			],
+			[
+				"git diff",
+				"Git: Diff: all changes since the last commit"
+			],
+			[
+				"git dif",
+				"Git: Diff: all changes since the last commit"
+			],
+			[
+				"tab",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"doc",
+				"DocBlockr: Reparse comment block"
+			],
+			[
+				"rein",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"reinden",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"settings",
+				"Preferences: Settings - User"
+			],
+			[
+				"inden",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"indent",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"package install",
+				"Package Control: Install Package"
+			],
+			[
+				"package instal",
+				"Package Control: Install Package"
+			],
+			[
+				"git stat",
+				"Git: Status"
+			],
+			[
+				"package inst",
+				"Package Control: Install Package"
+			],
+			[
+				"package ins",
+				"Package Control: Install Package"
+			],
+			[
+				"package ",
+				"Package Control: List Packages"
+			],
+			[
+				"install pac",
+				"Package Control: Install Package"
+			],
+			[
+				"snippet:",
+				"Snippet: if"
+			],
+			[
+				"snippet",
+				"Snippet: Prototype"
+			],
+			[
+				"pack",
+				"Package Control: List Packages"
+			],
+			[
+				"disable",
+				"Package Control: Disable Package"
+			],
+			[
+				"refactor",
+				"Preferences: Package Control Settings – User"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Enable Package"
+			],
+			[
+				"package con",
+				"Package Control: Install Package"
+			],
+			[
+				"package c",
+				"Package Control: Install Package"
+			],
+			[
+				"setting",
+				"Preferences: Settings - User"
+			],
+			[
+				"Package Control: di",
+				"Package Control: Disable Package"
+			],
+			[
+				":q",
+				"Set Syntax: SQL"
+			],
+			[
+				":w",
+				":w - Save"
+			],
+			[
+				"user ",
+				"Preferences: Settings - User"
+			],
+			[
+				"preferences u",
+				"Preferences: Settings - User"
+			],
+			[
+				"prefere",
+				"Preferences: Settings - Default"
+			],
+			[
+				"enab",
+				"Package Control: Enable Package"
+			],
+			[
+				"Package Control: en",
+				"Package Control: Enable Package"
+			],
+			[
+				"settings u",
+				"Preferences: Settings - User"
+			],
+			[
+				"Settings",
+				"Preferences: Settings - Default"
+			],
+			[
+				"set syntax java",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"shell",
+				"Set Syntax: Shell Script (Bash)"
+			],
+			[
+				"Package Control",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 732.0
+	},
+	"console":
+	{
+		"height": 139.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"import urllib2,os; pf='Package Control.sublime-package'; ipp=sublime.installed_packages_path(); os.makedirs(ipp) if not os.path.exists(ipp) else None; urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler())); open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read()); print 'Please restart Sublime Text to finish installation'"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/christo/repos/sequelize/playground"
+	],
+	"file_history":
+	[
+		"/home/christo/repos/ticktrack/login-fiddle/src/security/other-secrets.txt",
+		"/home/christo/repos/ticktrack/login-fiddle/package.json",
+		"/home/christo/repos/ticktrack/login-fiddle/src/server/app/util/pr/auth.js",
+		"/home/christo/repos/ticktrack/login-fiddle/README.md",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/apps/home/show/templates/home.html",
+		"/home/christo/repos/ticktrack/login-fiddle/src/server/app/api/user/router_impl.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/apps/header/show/templates/header.html",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/index.html",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/common/entities.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/apps/home/show/controller.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/common/views.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/apps/home/show/views.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/apps/user/profile/controller.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/server/app/config/version.json",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/common/templates/version_info.html",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/apps/home/show/templates/home_layout.html",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/common/templates/flash_message.html",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/apps/about/show/templates/about.html",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/base/entities.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/apps/home/entities.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/apps/user/entities.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/apps/home/home_app.js",
+		"/home/christo/repos/ticktrack/login-fiddle/Gruntfile.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/server/app/api/util/router_impl.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/server/app/api/util/router.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/server/app/config/version.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/server/app/requires_itest.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/server/app/api/api_itest.js",
+		"/home/christo/repos/ticktrack/login-fiddle/node_modules/grunt-version-file/lib/version_file_writer.js",
+		"/home/christo/repos/ticktrack/login-fiddle/node_modules/grunt-version-file/lib/grunt_version_file.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/main.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/scripts/install.py",
+		"/home/christo/repos/ticktrack/login-fiddle/src/scripts/configure.py",
+		"/home/christo/repos/ticktrack/login-fiddle/src/scripts/configure.yaml",
+		"/home/christo/repos/ticktrack/login-fiddle/src/server/app/config/database.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/server/app/util/auth/index.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/apps/user/access/controller.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/apps/user/user_app.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/apps/user/profile/templates/profile_admin.html",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/apps/user/profile/templates/change_password.html",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/apps/user/profile/templates/profile.html",
+		"/home/christo/repos/ticktrack/login-fiddle/src/server/node_modules/app/util/pr/auth.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/server/node_modules/app/api/user/router_impl.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/server/node_modules/app/api/user/router.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/server/node_modules/app/api/api_itest.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/server/app/api/user/router.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/apps/user/profile/views.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/app/config/config.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/server/app/config/server.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/apps/user/profile/templates/local_connect.html",
+		"/home/christo/repos/ticktrack/login-fiddle/src/server/node_modules/passport/lib/http/request.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/server/node_modules/passport/lib/authenticator.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/server/node_modules/passport/lib/middleware/authenticate.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/server/app/server.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/server/node_modules/passport/lib/middleware/initialize.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/server/app/config/user.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/server/app/util/logger/index.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/server/app/util/pr/index.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/server/app/util/util_utest.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/server/app/util/util_itest.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/server/package.json",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/app/obj.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/apps/entry/list/controller.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/apps/header/show/controller.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/apps/session/show/controller.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/server/app/api/entry/router_impl.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/server/app/api/helpers.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/server/node_modules/sequelize/lib/instance.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/apps/user/access/templates/signup.html",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/common/filtering_wrapper_collection.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/server/node_modules/bcrypt/build/Release/obj.target/bcrypt_lib.node",
+		"/home/christo/repos/ticktrack/login-fiddle/node_modules/should/.idea/inspectionProfiles/Project_Default.xml",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/bower_components/r.js/build/jslib/uglifyjs/process.js",
+		"/home/christo/repos/ticktrack/login-fiddle/node_modules/mocha/lib/browser/progress.js",
+		"/home/christo/repos/ticktrack/login-fiddle/node_modules/grunt/node_modules/glob/test/pause-resume.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/server/app/util/logger/logger_config.json",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/app/extensions/backbone.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/app/extensions/marionette.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/scripts/lib/configure.py",
+		"/home/christo/repos/ticktrack/login-fiddle/src/scripts/lib/general.py",
+		"/home/christo/repos/ticktrack/login-fiddle/src/server/app/config/api_util.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/scripts/upgrade.py",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/base/views.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/apps/entry/entities.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/apps/header/entities.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/apps/session/entities.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/display/obj.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/display/views.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/app/extensions/regexp.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/app/logger_builder.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/apps/about/show/controller.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/apps/footer/show/controller.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/bower.json",
+		"/home/christo/repos/ticktrack/login-fiddle/build/out/login-fiddle-1.0.0-20150718-1934/client/js/app/obj.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/common/base_views.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/app/display/obj.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/app/display/views.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/app/extensions/backbone_extensions.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/common/base_entities.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/common/backbone_extensions.js",
+		"/home/christo/repos/ticktrack/login-fiddle/build/out/login-fiddle-1.0.0-20150718-1934/client/js/app/config_jtest.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/app/config/config_jtest.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/app/display/index.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/app/display/templates/app_layout_container.html",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/app/display_container.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/apps/user/entities_jtest.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/apps/user/access/views.js",
+		"/home/christo/repos/ticktrack/login-fiddle/.gitignore",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/jasmine_jtest.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/app/config.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/jasmine_output.html",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/common/templates/header_bar_layout.html",
+		"/home/christo/repos/ticktrack/login-fiddle/src/server/app/api/user/router_impl.js~",
+		"/home/christo/repos/ticktrack/login-fiddle/src/server/node_modules/passport-facebook/lib/strategy.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/scripts/pm2-config.json",
+		"/home/christo/repos/ticktrack/login-fiddle/src/security/iptables_webserver_rules.txt",
+		"/home/christo/repos/ticktrack/login-fiddle/src/security/cert.pem",
+		"/home/christo/repos/ticktrack/login-fiddle/src/server/app/config/logger.js",
+		"/home/christo/repos/ticktrack/login-fiddle/LICENSE",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/app/config_jtest.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/server/app/config/config_utest.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/common/filtering_wrapper_collection_jtest.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/apps/user/access/templates/reactivate_form.html",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/apps/user/access/templates/access_form.html",
+		"/home/christo/repos/ticktrack/login-fiddle/src/server/node_modules/express-session/index.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/server/node_modules/sequelize/lib/model.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/server/app/api/user/router_utest.js",
+		"/home/christo/repos/ticktrack/login-fiddle/src/client/js/apps/user/profile/templates/profile_data.html"
+	],
+	"find":
+	{
+		"height": 37.0
+	},
+	"find_in_files":
+	{
+		"height": 95.0,
+		"where_history":
+		[
+			"*.js",
+			"*.html",
+			"*.js",
+			"index.js",
+			"*.py",
+			"*.js",
+			"*.*",
+			"",
+			"<open files>",
+			"*.*",
+			"<open files>",
+			"*.js"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"findAll",
+			"bump",
+			"change_",
+			"change_pass",
+			"Persistent",
+			"logger_con",
+			"postgres-fiddle",
+			"urlArgs",
+			"allowNull",
+			"DROP",
+			"configure_app",
+			"allowNull:",
+			".get",
+			"createdAt",
+			"timestamp",
+			"timestamps",
+			"define",
+			"define:",
+			"_timestampAttributes",
+			"createdAt",
+			"sq_",
+			"handle_rejected_promise",
+			"changepassword",
+			"changepassw",
+			"changepassword",
+			".Model",
+			"model",
+			"redirect",
+			"deactivate_path",
+			"proc_connect_local_submitted",
+			"It's OK",
+			"authentic",
+			"authenticate",
+			"authoriz",
+			"authori",
+			"authorize",
+			"function authori",
+			"_disconnect",
+			".then(function()",
+			".then(function(updated_user)",
+			"_serializers",
+			"serializeUser",
+			"serializeUser#",
+			"serializeUser",
+			"deserializeUser",
+			"\\",
+			"raw_logger_config",
+			"cached_loggers",
+			"raw_logger_config",
+			"configure_log4js",
+			"get_group_config_clone",
+			"validate_config",
+			"Logger",
+			"parse_level",
+			"user_find_scope",
+			"parse_level",
+			"log4js_loggers",
+			"bcrypt",
+			"//if",
+			"if",
+			"user_find_scope",
+			"get_scope_names",
+			"local.user_find_scopes",
+			"find_with",
+			"auth",
+			"user_find_scopes",
+			"user_find_scop",
+			"user_find_scopes",
+			"app/util/auth/index",
+			"make_filter_predicate",
+			"check_post_has_",
+			"mw_gen\\.make_check_post_has_req_fields\\((.*)\\)",
+			"\\.make_check_post_has_req_fields\\((.*)\\)",
+			"make_check",
+			"Error",
+			"handle_rejected_promise.bind(this",
+			"AppObj.make_on_promise_fail",
+			"fail\\(.*\\)\\)",
+			"fail\\(.*\\)\\);",
+			"fail\\(.*\\)\\)",
+			"fail\\(.*\\)\\);",
+			"));",
+			".fail\\(.*\\)\\);;",
+			"q(",
+			".done()",
+			"();`",
+			".fail\\(local.*\\)",
+			".fail(local.*)",
+			".fail\\(.*)",
+			".fail(.*)",
+			".fail(.*);",
+			"q(",
+			".fail(",
+			".fail",
+			"keys_required_for_login",
+			"(keys_required",
+			"keys_required",
+			"do_logout_and_redirect_to_success",
+			"show_list",
+			"{[ty",
+			"{[type",
+			".fail",
+			"promise.bind(null",
+			"scope",
+			".scope",
+			".fail(",
+			"fail(",
+			"promise.fail",
+			"fail",
+			"fail(",
+			"282",
+			"reactivate",
+			"reactivate_user",
+			"login_message",
+			"login_mes",
+			"login_message",
+			"    login_message: 'Logged in via Facebook'",
+			"login_message",
+			"react_message",
+			"reactivate_and",
+			"increment_local_unsuccessful_logins",
+			"local-",
+			"local-signup",
+			"check_pass",
+			"unhashed",
+			"make_passport",
+			"catch_error",
+			"get_twitter_connect_callback_url"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			".then(function()",
+			"",
+			"local.cached_loggers",
+			"local.raw_logger_config",
+			"local.configure_log4js",
+			"local.get_group_config_clone",
+			"local.validate_config",
+			"local.parse_level",
+			"local.log4js_loggers",
+			"if",
+			"this.get_scope_names()",
+			"local.user_find_scopes",
+			"mw\\.check_post_has_req_fields.bind(undefined, \\1)",
+			"\\.check_post_has_req_fields.bind(undefined, \\1)",
+			"handle_rejected_promise.bind(undefined",
+			"local.keys_required",
+			"promise.bind(this",
+			"local.make_passport",
+			"local.get_twitter_connect_callback_url",
+			"local.get_twitter_reactivate_callback_url",
+			"local.get_twitter_auth_callback_url",
+			"local.get_google_connect_callback_url",
+			" local.get_google_reactivate_callback_url",
+			"local.get_google_auth_callback_url",
+			"local.get_fb_connect_callback_url",
+			"local.get_fb_reactivate_callback_url",
+			"local.get_fb_auth_callback_url",
+			"local",
+			"null, done, req",
+			"handle_passport_callback_rejected_promise.bind(null, done",
+			"handle_passport_callback_rejected_promise",
+			"make_filter_predicate",
+			"make_on_promise_fail",
+			"make_check_post_has_req_fields",
+			"AppObj.Display.tainer.scroll_to_top",
+			"make_passport_reactivate_strategy_callback",
+			"'make_passport_access_strategy_callback",
+			"make_passport_access_strategy_callback",
+			"passport_access_strategy_callback_generator",
+			"passport_access_strategy_callback",
+			"pp_access_strategy_callback",
+			"^\\n",
+			"(server_host)s:%(https_port)",
+			"https_port",
+			"client/js/app/config/config.js",
+			"config/user.js",
+			"dict",
+			"output_filepath",
+			"current_val_filepath",
+			"current_filepath",
+			"base/views",
+			"base/entities",
+			"js/display",
+			"'js/app/config/config'",
+			"js/app/display",
+			"js/app/display/obj",
+			"js/display",
+			"'js/app/display/obj'",
+			"js/display",
+			"Display.tainer",
+			"a-zA-Z0-9\\.",
+			",",
+			"self.__get_value_input",
+			"constant",
+			"connect_callback_path:",
+			"Reactivated",
+			"show_reactivate_form",
+			"Account currently deactiv",
+			"do_logout_and_redirect_to_success",
+			"var scope = scope",
+			"trigger_after_access",
+			"userprofilecontrolpanel",
+			"UserProfileControlPanel",
+			"region_profile_main",
+			"region_profile_control_panel",
+			"AppObj.Common.Entities",
+			"LocalDataForValidation",
+			"region_form",
+			"user:profile",
+			"p_data_view",
+			"p_admin",
+			"_disc_",
+			"fb",
+			"configure.py: facebook",
+			"fb",
+			"get_fb_auth_url",
+			"proc_fb_login",
+			"fb_auth_url",
+			"get_fb_auth_url",
+			"get_fb_google_display_mode_from_ui_scale",
+			"fb_inuse",
+			"fb_connected",
+			"fb_profile",
+			"fb_connect_strategy_callback",
+			"fb_access_clicked",
+			"fb_access_strategy_callback",
+			"get_fb_connect_callback_url",
+			"get_fb_auth_callback_url",
+			"disconnect_fb_and_save",
+			"connect_fb_and_save",
+			"create_from_fb_and_save",
+			"disconnect_fb_and_save",
+			"connect_fb_disconnect",
+			"b_declined",
+			"fb-connect",
+			"fb-access",
+			"connect_fb_callback",
+			"connect_fb_auth",
+			"access_fb_callback",
+			"access_fb_auth",
+			"mark_err",
+			"clear_form_errs",
+			"val_errs",
+			"err",
+			"show_val_errs",
+			"val_errs",
+			"val_error",
+			"err",
+			"redirect_to",
+			"config.apps.user",
+			"message_code=",
+			"get_message_from_code",
+			"get_message_from_reason_code",
+			"server_config.util_route_failure",
+			"server_config.util_route_success",
+			"profile.id",
+			"local",
+			".auth_"
+		],
+		"reverse": false,
+		"show_context": false,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 21.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 412.0
+	},
+	"project": "sq-playground.sublime-project",
+	"replace":
+	{
+		"height": 66.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"grunt",
+				"Gruntfile.js"
+			],
+			[
+				"git",
+				"~/repos/grunt-set-app-mode/lib/set_app_mode.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"~/repos/grunt-version-file/grunt-version-file.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 375.0,
+		"selected_items":
+		[
+		],
+		"width": 806.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 262.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
