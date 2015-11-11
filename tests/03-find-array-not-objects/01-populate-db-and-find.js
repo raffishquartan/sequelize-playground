@@ -20,10 +20,7 @@ var models = {
     },
     name: {
       type: Sequelize.STRING(255),
-      allowNull: false,
-      validate: {
-        isDate: true,
-      }
+      allowNull: false
     },
     age: {
       type: Sequelize.INTEGER.UNSIGNED,
