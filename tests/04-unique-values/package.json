@@ -1,0 +1,10 @@
+{
+  "name": "04-unique-values",
+  "version": "0.0.0",
+  "description": "https://stackoverflow.com/questions/33638223/unique-values-in-sequelize",
+  "private": true,
+  "dependencies": {
+    "bluebird": "3.0.5",
+    "lodash": "3.10.1"
+  }
+}
