@@ -141,6 +141,14 @@ function add_data() {
     });
 }
 
+/**
+ * Method: Sequelize findAll from StackOverflow
+ * Goal: Find all tags associated with a user (as owner or when they are party to a transaction associated with a tag).
+ * Result: Error
+ *
+ * @param  {Any}     user_id Any value that can be coerced to a numerical ID for a user
+ * @return {Promise}         A promise for the result of the findAll
+ */
 function find_all_tags_related_to_user_erroring(user_id) {
   return models.tag.findAll({
     where: { owner_id: user_id }, // missing OR user_transaction.user_id = user_id
@@ -156,32 +164,139 @@ function find_all_tags_related_to_user_erroring(user_id) {
   })
 }
 
-function find_all_tags_related_to_user_works(user_id) {
-  return models.tag.findAll();
+/**
+ * Method: Sequelize raw query from StackOverflow
+ * Goal: Find all tags associated with a user (as owner or when they are party to a transaction associated with a tag).
+ * Result - exact id's returned sometimes change depending on promise resolution order for setTag calls
+ * [
+ *  {
+ *    "id": "1",
+ *    "owner_id": "1"
+ *  },
+ *  {
+ *    "id": "2",
+ *   "owner_id": "1"
+ *  },
+ *  {
+ *    "id": "4",
+ *    "owner_id": "2"
+ *  },
+ *  {
+ *    "id": "7",
+ *    "owner_id": "3"
+ *  },
+ *  {
+ *    "id": "10",
+ *    "owner_id": "3"
+ *  }
+ * ]
+ *
+ * @param  {Any}     user_id Any value that can be coerced to a numerical ID for a user
+ * @return {Promise}         A promise for the result of the query
+ */
+function find_all_tags_related_to_user_raw_so(user_id) {
+  var sql = 'select * from s05.tag ' +
+            'left outer join s05.transaction on s05.tag.id = s05.transaction.tag_id ' +
+            'left outer join s05.user_tx on s05.transaction.id = s05.user_tx.tx_id ' +
+            'where s05.tag.owner_id = ' + user_id + ' or s05.user_tx.user_id = ' + user_id;
+
+  return sq.query(sql, { type: sq.QueryTypes.SELECT})
+    .then(function(data_array) {
+      return _.map(data_array, function(data) {
+        return models.tag.build(data, { isNewRecord: false });;
+      });
+    })
+    .catch(function(err) {
+      console.warn('REJECTED PROMISE: ' + err);
+      console.error(err);
+      console.error(err.stack);
+      return err;
+    });
+}
+
+/**
+ * Method: Sequelize raw query that returns all tags in the set:
+ *   {owned by user_id U {all tags associated with a transaction associated with user_id}}
+ * Goal: Find all tags associated with a user (as owner or when they are party to a transaction associated with a tag).
+ * Result - exact id's returned sometimes change depending on promise resolution order for setTag calls
+ * [
+ *  {
+ *    "id": "tag4-user3",
+ *    "owner_id": "3"
+ *  },
+ *  {
+ *    "id": "tag2-user2",
+ *    "owner_id": "2"
+ *  },
+ *  {
+ *    "id": "tag1-user1",
+ *    "owner_id": "1"
+ *  },
+ *  {
+ *    "id": "tag5-user3",
+ *    "owner_id": "3"
+ *  }
+ * ]
+ *
+ * @param  {Any}     user_id Any value that can be coerced to a numerical ID for a user
+ * @return {Promise}         A promise for the result of the query
+ */
+function find_all_tags_related_to_user_raw_alt(user_id) {
+  var sql = 'select s05.tag.id, s05.tag.owner_id from s05.tag ' +
+            'where s05.tag.owner_id = 1 ' +
+            'union ' +
+            'select s05.tag.id, s05.tag.owner_id from s05.tag, s05.transaction, s05.user_tx ' +
+            'where s05.tag.id = s05.transaction.tag_id and s05.user_tx.tx_id = s05.transaction.id and ' +
+            's05.user_tx.user_id = 1';
+
+  return sq.query(sql, { type: sq.QueryTypes.SELECT})
+    .then(function(data_array) {
+      return _.map(data_array, function(data) {
+        return models.tag.build(data, { isNewRecord: false });;
+      });
+    })
+    .catch(function(err) {
+      console.error(err);
+      console.error(err.stack);
+      return err;
+    });
 }
 
 function print_result(result_set, data) {
-  console.log('');
-  console.log('Result set: ' + result_set);
+  console.log();
+  console.log('RESULT SET:        ' + result_set);
   console.log(JSON.stringify(data, null, 2));
-  console.log('');
+  console.log();
   return data
 }
 
 /**
  * Swallow rejected promises. There'll be at least one from a failed find, this allows other find attempts to proceed.
  */
-function swallow_rejected_promise(err) {
-  console.warn('REJECTED PROMISE: ' + err);
+function swallow_rejected_promise(result_set, err) {
+  console.log();
+  console.warn('REJECTED PROMISE: ' + result_set + ' -- ' + err);
   console.warn(err.stack);
+  console.log();
   return undefined;
 }
 
 sq.sync({ force: true })
 .then(add_data)
-.then(find_all_tags_related_to_user_erroring.bind(null, 0)) // repro the error reported on SO
-.then(print_result.bind(null, 'user.id===0, erroring'))
-.catch(swallow_rejected_promise)
+.then(function() {
+  return Promise.all([
+    find_all_tags_related_to_user_erroring(1)
+    .then(print_result.bind(null, 'user.id===1, erroring findAll from StackOverflow')) // isn't called
+    .catch(swallow_rejected_promise.bind(null, 'user.id===1, erroring findAll from StackOverflow')),
+
+    find_all_tags_related_to_user_raw_so(1)
+    .then(print_result.bind(null, 'user.id===1, raw SQL from StackOverflow')),
+
+    find_all_tags_related_to_user_raw_alt(1)
+    .then(print_result.bind(null, 'user.id===1, alternate raw SQL'))
+  ]);
+})
+.catch(swallow_rejected_promise.bind(null, 'main promise chain'))
 .finally(function() {
   sq.close();
 })
