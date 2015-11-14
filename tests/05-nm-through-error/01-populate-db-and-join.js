@@ -77,10 +77,10 @@ models.transaction.belongsToMany(models.user, {through: {model: models.user_tx, 
 function add_data_make_user_instances_array() {
   console.log('Making the user instances');
   return Promise.all([
-      models.user.create({}),
-      models.user.create({}),
-      models.user.create({})
-    ]);
+    models.user.create({}),
+    models.user.create({}),
+    models.user.create({})
+  ]);
 }
 
 /**
@@ -90,13 +90,13 @@ function add_data_make_user_instances_array() {
 function add_data_make_tag_instances_array(users_array) {
   console.log('Making the tag instances');
   return Promise.all([
-      models.tag.create({ id: 'tag1-user1', owner_id: users_array[0].get('id') }),
-      models.tag.create({ id: 'tag2-user2', owner_id: users_array[1].get('id') }),
-      models.tag.create({ id: 'tag3-user2', owner_id: users_array[1].get('id') }),
-      models.tag.create({ id: 'tag4-user3', owner_id: users_array[2].get('id') }),
-      models.tag.create({ id: 'tag5-user3', owner_id: users_array[2].get('id') }),
-      models.tag.create({ id: 'tag6-user3', owner_id: users_array[2].get('id') })
-    ]);
+    models.tag.create({ id: 'tag1-user1', owner_id: users_array[0].get('id') }),
+    models.tag.create({ id: 'tag2-user2', owner_id: users_array[1].get('id') }),
+    models.tag.create({ id: 'tag3-user2', owner_id: users_array[1].get('id') }),
+    models.tag.create({ id: 'tag4-user3', owner_id: users_array[2].get('id') }),
+    models.tag.create({ id: 'tag5-user3', owner_id: users_array[2].get('id') }),
+    models.tag.create({ id: 'tag6-user3', owner_id: users_array[2].get('id') })
+  ]);
 }
 
 /**
@@ -106,13 +106,13 @@ function add_data_make_tag_instances_array(users_array) {
 function add_data_make_transaction_instance_array(tags_array) {
   console.log('Making the transaction instances');
   return Promise.all([
-      models.transaction.create({ active: true }).then(function(tx) { return tx.setTag(tags_array[0]); }),
-      models.transaction.create({ active: true }).then(function(tx) { return tx.setTag(tags_array[1]); }),
-      models.transaction.create({ active: true }).then(function(tx) { return tx.setTag(tags_array[2]); }),
-      models.transaction.create({ active: true }).then(function(tx) { return tx.setTag(tags_array[3]); }),
-      models.transaction.create({ active: true }).then(function(tx) { return tx.setTag(tags_array[4]); }),
-      models.transaction.create({ active: true }).then(function(tx) { return tx.setTag(tags_array[5]); }),
-    ]);
+    models.transaction.create({ active: true }).then(function(tx) { return tx.setTag(tags_array[0]); }),
+    models.transaction.create({ active: true }).then(function(tx) { return tx.setTag(tags_array[1]); }),
+    models.transaction.create({ active: true }).then(function(tx) { return tx.setTag(tags_array[2]); }),
+    models.transaction.create({ active: true }).then(function(tx) { return tx.setTag(tags_array[3]); }),
+    models.transaction.create({ active: true }).then(function(tx) { return tx.setTag(tags_array[4]); }),
+    models.transaction.create({ active: true }).then(function(tx) { return tx.setTag(tags_array[5]); }),
+  ]);
 }
 
 /**
@@ -123,28 +123,28 @@ function add_data_make_transaction_instance_array(tags_array) {
 function add_data_add_users_to_transactions(users_array, tx_array) {
   console.log('Linking users to transactions');
   return Promise.all([
-      tx_array[0].setUsers([users_array[0], users_array[1]]),
-      tx_array[1].setUsers([users_array[2], users_array[0]]),
-      tx_array[2].setUsers([users_array[1], users_array[2]]),
-      tx_array[3].setUsers([users_array[0], users_array[1]]),
-      tx_array[4].setUsers([users_array[2], users_array[0]]),
-      tx_array[5].setUsers([users_array[1], users_array[2]])
-    ]);
+    tx_array[0].setUsers([users_array[0], users_array[1]]),
+    tx_array[1].setUsers([users_array[2], users_array[0]]),
+    tx_array[2].setUsers([users_array[1], users_array[2]]),
+    tx_array[3].setUsers([users_array[0], users_array[1]]),
+    tx_array[4].setUsers([users_array[2], users_array[0]]),
+    tx_array[5].setUsers([users_array[1], users_array[2]])
+  ]);
 }
 
 function add_data() {
   return add_data_make_user_instances_array()
-    .then(function(users_array) {
-      return add_data_make_tag_instances_array(users_array)
-        .then(add_data_make_transaction_instance_array)
-        .then(add_data_add_users_to_transactions.bind(null, users_array));
-    });
+  .then(function(users_array) {
+    return add_data_make_tag_instances_array(users_array)
+      .then(add_data_make_transaction_instance_array)
+      .then(add_data_add_users_to_transactions.bind(null, users_array));
+  });
 }
 
 /**
  * Method: Sequelize findAll from StackOverflow
- * Goal: Find all tags associated with a user (as owner or when they are party to a transaction associated with a tag).
- * Result: Error
+ * Goal:   Find all tags associated with a user (as owner or when they are party to a transaction assoc with a tag).
+ * Result: Error as described in the Stack Overflow question
  *
  * @param  {Any}     user_id Any value that can be coerced to a numerical ID for a user
  * @return {Promise}         A promise for the result of the findAll
@@ -166,30 +166,30 @@ function find_all_tags_related_to_user_erroring(user_id) {
 
 /**
  * Method: Sequelize raw query from StackOverflow
- * Goal: Find all tags associated with a user (as owner or when they are party to a transaction associated with a tag).
- * Result - exact id's returned sometimes change depending on promise resolution order for setTag calls
- * [
- *  {
- *    "id": "1",
- *    "owner_id": "1"
- *  },
- *  {
- *    "id": "2",
- *   "owner_id": "1"
- *  },
- *  {
- *    "id": "4",
- *    "owner_id": "2"
- *  },
- *  {
- *    "id": "7",
- *    "owner_id": "3"
- *  },
- *  {
- *    "id": "10",
- *    "owner_id": "3"
- *  }
- * ]
+ * Goal:   Find all tags associated with a user (as owner or when they are party to a transaction assoc with a tag).
+ * Result: Looks like a mix of user_tx id's and tag.owner_id's? -
+ *         [
+ *          {
+ *            "id": "1",
+ *            "owner_id": "1"
+ *          },
+ *          {
+ *            "id": "2",
+ *           "owner_id": "1"
+ *          },
+ *          {
+ *            "id": "4",
+ *            "owner_id": "2"
+ *          },
+ *          {
+ *            "id": "7",
+ *            "owner_id": "3"
+ *          },
+ *          {
+ *            "id": "10",
+ *            "owner_id": "3"
+ *          }
+ *         ]
  *
  * @param  {Any}     user_id Any value that can be coerced to a numerical ID for a user
  * @return {Promise}         A promise for the result of the query
@@ -201,42 +201,25 @@ function find_all_tags_related_to_user_raw_so(user_id) {
             'where s05.tag.owner_id = ' + user_id + ' or s05.user_tx.user_id = ' + user_id;
 
   return sq.query(sql, { type: sq.QueryTypes.SELECT})
-    .then(function(data_array) {
-      return _.map(data_array, function(data) {
-        return models.tag.build(data, { isNewRecord: false });;
-      });
-    })
-    .catch(function(err) {
-      console.warn('REJECTED PROMISE: ' + err);
-      console.error(err);
-      console.error(err.stack);
-      return err;
+  .then(function(data_array) {
+    return _.map(data_array, function(data) {
+      return models.tag.build(data, { isNewRecord: false });;
     });
+  })
+  .catch(function(err) {
+    console.warn('REJECTED PROMISE: ' + err);
+    console.error(err);
+    console.error(err.stack);
+    return err;
+  });
 }
 
 /**
  * Method: Sequelize raw query that returns all tags in the set:
- *   {owned by user_id U {all tags associated with a transaction associated with user_id}}
- * Goal: Find all tags associated with a user (as owner or when they are party to a transaction associated with a tag).
- * Result - exact id's returned sometimes change depending on promise resolution order for setTag calls
- * [
- *  {
- *    "id": "tag4-user3",
- *    "owner_id": "3"
- *  },
- *  {
- *    "id": "tag2-user2",
- *    "owner_id": "2"
- *  },
- *  {
- *    "id": "tag1-user1",
- *    "owner_id": "1"
- *  },
- *  {
- *    "id": "tag5-user3",
- *    "owner_id": "3"
- *  }
- * ]
+ *         {owned by user_id U {all tags associated with a transaction associated with user_id}}
+ * Goal:   Find all tags associated with a user (as owner or when they are party to a transaction assoc. with a tag).
+ * Result: What is requested in the SO question text: " a list of Tag objects owned by a given user, in addition to
+ *         Tag objects that the user has associated Transactions for"
  *
  * @param  {Any}     user_id Any value that can be coerced to a numerical ID for a user
  * @return {Promise}         A promise for the result of the query
@@ -250,16 +233,16 @@ function find_all_tags_related_to_user_raw_alt(user_id) {
             's05.user_tx.user_id = ' + user_id;
 
   return sq.query(sql, { type: sq.QueryTypes.SELECT})
-    .then(function(data_array) {
-      return _.map(data_array, function(data) {
-        return models.tag.build(data, { isNewRecord: false });;
-      });
-    })
-    .catch(function(err) {
-      console.error(err);
-      console.error(err.stack);
-      return err;
+  .then(function(data_array) {
+    return _.map(data_array, function(data) {
+      return models.tag.build(data, { isNewRecord: false });;
     });
+  })
+  .catch(function(err) {
+    console.error(err);
+    console.error(err.stack);
+    return err;
+  });
 }
 
 function print_result(result_set, data) {
@@ -267,11 +250,12 @@ function print_result(result_set, data) {
   console.log('RESULT SET:        ' + result_set);
   console.log(JSON.stringify(data, null, 2));
   console.log();
-  return data
+  return data;
 }
 
 /**
- * Swallow rejected promises. There'll be at least one from a failed find, this allows other find attempts to proceed.
+ * Swallow rejected promises. There'll be at least one from a failed find, this allows other find attempts to proceed
+ * in the Promise.all
  */
 function swallow_rejected_promise(result_set, err) {
   console.log();
