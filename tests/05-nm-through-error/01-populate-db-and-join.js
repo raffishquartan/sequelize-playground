@@ -245,6 +245,82 @@ function find_all_tags_related_to_user_raw_alt(user_id) {
   });
 }
 
+/**
+ * Method: transaction.findAll - includes user objects as well
+ * Goal: To find all transactions associated with the given user_id
+ *
+ * @param  {Any}     user_id Any value that can be coerced to a numerical ID for a user
+ * @return {Promise}         A promise for the result of the query
+ */
+function find_all_transactions_for_user(user_id) {
+  return models.transaction.findAll({
+    include: [{
+      model: models.user,
+      where: { id: user_id }
+    }]
+  });
+}
+
+/**
+ * Method: tag.findAll - includes transaction and user objects as well
+ * Goal: To find all tags associated with the given user_id via a transaction
+ *
+ * @param  {Any}     user_id Any value that can be coerced to a numerical ID for a user
+ * @return {Promise}         A promise for the result of the query
+ */
+function find_all_tags_associated_with_user_via_transaction(user_id) {
+  return models.tag.findAll({
+    include: [{
+      model: models.transaction,
+      include: [{
+        model: models.user,
+        where: { id: user_id }
+      }]
+    }]
+  })
+}
+
+/**
+ * Method: tag.findAll where owner_id = user_id
+ * Goal: To find all tags owned by user_id
+ *
+ * @param  {Any}     user_id Any value that can be coerced to a numerical ID for a user
+ * @return {Promise}         A promise for the result of the query
+ */
+function find_all_tags_owned_by_user(user_id) {
+  return models.tag.findAll({
+    where: { owner_id: user_id }
+  });
+}
+
+/**
+ * Method: Two calls to tag.findAll unioned - one for tags associated via transactions, one for tags owned
+ * Goal: To find all tags associated with the given user_id via a transaction or owned by the user
+ *
+ * @param  {Any}     user_id Any value that can be coerced to a numerical ID for a user
+ * @return {Promise}         A promise for the result of the query
+ */
+function find_all_tags_owned_by_user_or_associated_with_user_via_transaction(user_id) {
+  var tags_associated_via_tx = models.tag.findAll({
+    include: [{
+      model: models.transaction,
+      include: [{
+        model: models.user,
+        where: { id: user_id }
+      }]
+    }]
+  });
+
+  var tags_owned_by_user = models.tag.findAll({
+    where: { owner_id: user_id }
+  });
+
+  return Promise.all([tags_associated_via_tx, tags_owned_by_user])
+  .spread(function(tags_associated_via_tx, tags_owned_by_user) {
+    return _.uniq(_.flatten(tags_associated_via_tx, tags_owned_by_user), 'id') // dedupe the two arrays of tags
+  });
+}
+
 function print_result(result_set, data) {
   console.log();
   console.log('RESULT SET:        ' + result_set);
@@ -269,15 +345,41 @@ sq.sync({ force: true })
 .then(add_data)
 .then(function() {
   return Promise.all([
+    /*
     find_all_tags_related_to_user_erroring(1)
     .then(print_result.bind(null, 'user.id===1, erroring findAll from StackOverflow')) // isn't called
     .catch(swallow_rejected_promise.bind(null, 'user.id===1, erroring findAll from StackOverflow')),
+    */
 
+    /*
     find_all_tags_related_to_user_raw_so(1)
     .then(print_result.bind(null, 'user.id===1, raw SQL from StackOverflow')),
+    */
 
+    ///*
     find_all_tags_related_to_user_raw_alt(1)
-    .then(print_result.bind(null, 'user.id===1, alternate raw SQL'))
+    .then(print_result.bind(null, 'user.id===1, alternate raw SQL')),
+    //*/
+
+    /*
+    find_all_transactions_for_user(1)
+    .then(print_result.bind(null, 'user.id===1, all transactions for user')),
+    */
+
+    /*
+    find_all_tags_associated_with_user_via_transaction(1)
+    .then(print_result.bind(null, 'user.id===1, all tags associated with user via transaction')),
+    */
+
+    /*
+    find_all_tags_owned_by_user(1)
+    .then(print_result.bind(null, 'user.id===1, all tags owned by user')),
+    */
+
+    ///*
+    find_all_tags_owned_by_user_or_associated_with_user_via_transaction(1)
+    .then(print_result.bind(null, 'user.id===1, all tags owned by user or associated with user via transaction'))
+    //*/
   ]);
 })
 .catch(swallow_rejected_promise.bind(null, 'main promise chain'))
