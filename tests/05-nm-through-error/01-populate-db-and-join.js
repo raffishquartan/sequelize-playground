@@ -243,11 +243,11 @@ function find_all_tags_related_to_user_raw_so(user_id) {
  */
 function find_all_tags_related_to_user_raw_alt(user_id) {
   var sql = 'select s05.tag.id, s05.tag.owner_id from s05.tag ' +
-            'where s05.tag.owner_id = 1 ' +
+            'where s05.tag.owner_id = ' + user_id + ' ' +
             'union ' +
             'select s05.tag.id, s05.tag.owner_id from s05.tag, s05.transaction, s05.user_tx ' +
             'where s05.tag.id = s05.transaction.tag_id and s05.user_tx.tx_id = s05.transaction.id and ' +
-            's05.user_tx.user_id = 1';
+            's05.user_tx.user_id = ' + user_id;
 
   return sq.query(sql, { type: sq.QueryTypes.SELECT})
     .then(function(data_array) {
