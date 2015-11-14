@@ -345,16 +345,16 @@ sq.sync({ force: true })
 .then(add_data)
 .then(function() {
   return Promise.all([
-    /*
+    ///*
     find_all_tags_related_to_user_erroring(1)
     .then(print_result.bind(null, 'user.id===1, erroring findAll from StackOverflow')) // isn't called
     .catch(swallow_rejected_promise.bind(null, 'user.id===1, erroring findAll from StackOverflow')),
-    */
+    //*/
 
-    /*
+    ///*
     find_all_tags_related_to_user_raw_so(1)
     .then(print_result.bind(null, 'user.id===1, raw SQL from StackOverflow')),
-    */
+    //*/
 
     ///*
     find_all_tags_related_to_user_raw_alt(1)
