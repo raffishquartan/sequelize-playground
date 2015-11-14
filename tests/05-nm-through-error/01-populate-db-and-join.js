@@ -141,8 +141,42 @@ function add_data() {
     });
 }
 
-function find_all_tags_related_to_user(user_id) {
+function find_all_tags_related_to_user_erroring(user_id) {
+  return models.tag.findAll({
+    where: { owner_id: user_id }, // missing OR user_transaction.user_id = user_id
+    include: [{
+      model: models.transaction,
+      attributes: ['id'],
+      through: {model: models.user_tx, where: {user_id: user_id}, attributes: ['user_id', 'tx_id']},
+      where: {
+        active: true
+      },
+      required: false, // include tags that do not have an associated Transaction
+    }]
+  })
+}
 
+function find_all_tags_related_to_user_raw(user_id) {
+  var sql = 'select * from s05.tag ' +
+            'left outer join s05.transaction on s05.tag.id = s05.transaction.tag_id ' +
+            'left outer join s05.user_tx on s05.transaction.id = s05.user_tx.tx_id ' +
+            'where s05.tag.owner_id = ' + user_id + ' or s05.user_tx.user_id = ' + user_id;
+
+  return sq.query(sql, { type: sq.QueryTypes.SELECT})
+    .then(function(data_array) {
+      return _.map(data_array, function(data) {
+        return models.row.build(data, { isNewRecord: false });;
+      });
+    })
+    .catch(function(err) {
+      console.error(err);
+      console.error(err.stack);
+      return err;
+    });
+}
+
+function find_all_tags_related_to_user_works(user_id) {
+  return models.tag.findAll();
 }
 
 function print_result(result_set, data) {
@@ -153,19 +187,29 @@ function print_result(result_set, data) {
   return data
 }
 
-sq.sync({ force: true })
-.then(add_data)
-.then(find_all_tags_related_to_user.bind(null, 0))
-.then(print_result.bind(null, 'user.id===0'))
-.then(find_all_tags_related_to_user.bind(null, 1))
-.then(print_result.bind(null, 'user.id===1'))
-.then(find_all_tags_related_to_user.bind(null, 2))
-.then(print_result.bind(null, 'user.id===2'))
-.then(function() {
-  sq.close();
-})
-.catch(function(err) {
+/**
+ * Swallow rejected promises. There'll be at least one from a failed find, this allows other find attempts to proceed.
+ */
+function swallow_rejected_promise(err) {
   console.warn('REJECTED PROMISE: ' + err);
   console.warn(err.stack);
+  return undefined;
+}
+
+sq.sync({ force: true })
+.then(add_data)
+.then(function() { // try the various methods of doing the find
+  return Promise.all([
+      find_all_tags_related_to_user_erroring(0) // repro the error reported on SO, errors unless raw query is present
+      .then(null, print_result.bind(null, 'user.id===0, erroring'))
+      .catch(swallow_rejected_promise),
+
+      find_all_tags_related_to_user_raw(0) // should be a working version of the query for id 0, but returns no results
+      .then(print_result.bind(null, 'user.id===0, working (should return tx 1, 2, 4, 5)'), null)
+      .catch(swallow_rejected_promise)
+    ]);
 })
-.done();
+.catch(swallow_rejected_promise)
+.finally(function() {
+  sq.close();
+})
