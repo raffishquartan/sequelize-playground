@@ -109,9 +109,9 @@ function add_data_make_transaction_instance_array(tags_array) {
       models.transaction.create({ active: true }).then(function(tx) { return tx.setTag(tags_array[0]); }),
       models.transaction.create({ active: true }).then(function(tx) { return tx.setTag(tags_array[1]); }),
       models.transaction.create({ active: true }).then(function(tx) { return tx.setTag(tags_array[2]); }),
-      models.transaction.create({ active: false }).then(function(tx) { return tx.setTag(tags_array[3]); }),
-      models.transaction.create({ active: false }).then(function(tx) { return tx.setTag(tags_array[4]); }),
-      models.transaction.create({ active: false }).then(function(tx) { return tx.setTag(tags_array[5]); }),
+      models.transaction.create({ active: true }).then(function(tx) { return tx.setTag(tags_array[3]); }),
+      models.transaction.create({ active: true }).then(function(tx) { return tx.setTag(tags_array[4]); }),
+      models.transaction.create({ active: true }).then(function(tx) { return tx.setTag(tags_array[5]); }),
     ]);
 }
 
