@@ -4,6 +4,9 @@
   "description": "00-demo without Sequelize::close call, demonstrating hang -- /home/christo/repos/sequelize/playground/tests/00-demo",
   "private": true,
   "dependencies": {
-    "q": "1.1.2"
+    "q": "1.1.2",
+    "pg": "4.2.0",
+    "pg-hstore": "2.3.2",
+    "sequelize": "3.3.2"
   }
 }
