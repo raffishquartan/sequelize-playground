@@ -1,8 +1,8 @@
 'use strict';
 
 /**
- * Configuration information for creating a Sequelize object in a test. `options.define.schema` just be assigned per
- * test and database name, username and password must match config.sh, otherwise customise only as needed.
+ * Configuration information for creating a Sequelize object in a postgres-backed test. `options.define.schema` must be
+ * assigned per test and database name, username and password must match config.sh, otherwise customise only as needed.
  *
  * @type {Object}
  */
