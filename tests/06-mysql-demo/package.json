@@ -1,0 +1,11 @@
+{
+  "name": "06-mysql-demo",
+  "version": "0.0.0",
+  "description": "Demo using MySQL as backing store",
+  "private": true,
+  "dependencies": {
+    "bluebird": "3.0.5",
+    "mysql": "2.9.0",
+    "sequelize": "3.13.0"
+  }
+}
