@@ -4,7 +4,7 @@ cd ${0%/*}
 
 source config.sh
 
-# Create DB and user
+# Postgres - create user and database
 sudo -u postgres psql -c "DROP DATABASE IF EXISTS $DB_NAME;"
 sudo -u postgres psql -c "DROP USER IF EXISTS $DB_USER;"
 sudo -u postgres psql -c "CREATE USER $DB_USER WITH PASSWORD '$DB_PW';"

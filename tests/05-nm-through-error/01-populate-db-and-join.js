@@ -4,7 +4,7 @@ var Promise = require('bluebird');
 var _ = require('lodash');
 var Sequelize = require('sequelize');
 
-var sq_config = require('../sequelize-config');
+var sq_config = require('../sequelize-config-pg');
 sq_config.options.define.schema = 's05';
 var sq = new Sequelize(sq_config.database, sq_config.username, sq_config.password, sq_config.options);
 
