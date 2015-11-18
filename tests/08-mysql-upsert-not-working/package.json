@@ -1,0 +1,12 @@
+{
+  "name": "08-upsert-not-working",
+  "version": "0.0.0",
+  "description": "https://stackoverflow.com/questions/33787381/sequelize-upsert-boolean-not-working - current code works",
+  "private": true,
+  "dependencies": {
+    "bluebird": "3.0.5",
+    "lodash": "3.10.1",
+    "mysql": "2.9.0",
+    "sequelize": "3.13.0"
+  }
+}
