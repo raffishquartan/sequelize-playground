@@ -1,0 +1,12 @@
+{
+  "name": "10-mysql-sync-warning",
+  "version": "0.0.0",
+  "description": "sq.sync causes bluebird warning about unreturned promise, new from 3.13.0 to 3.14.0",
+  "private": true,
+  "dependencies": {
+    "pg": "4.2.0",
+    "pg-hstore": "2.3.2",
+    "mysql": "2.9.0",
+    "sequelize": "3.14.0"
+  }
+}
