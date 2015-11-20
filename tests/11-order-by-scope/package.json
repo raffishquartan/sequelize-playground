@@ -1,0 +1,11 @@
+{
+  "name": "11-order-by-scope",
+  "version": "0.0.0",
+  "description": "https://stackoverflow.com/questions/33821212/sequelize-order-by-issue",
+  "private": true,
+  "dependencies": {
+    "pg": "4.2.0",
+    "pg-hstore": "2.3.2",
+    "sequelize": "3.14.0"
+  }
+}
