@@ -1,0 +1,12 @@
+{
+  "name": "12-find-with-includes",
+  "version": "0.0.0",
+  "description": "https://stackoverflow.com/questions/33826607/load-includes-on-existing-model",
+  "private": true,
+  "dependencies": {
+    "bluebird": "3.0.5",
+    "pg": "4.2.0",
+    "pg-hstore": "2.3.2",
+    "sequelize": "3.3.2"
+  }
+}
