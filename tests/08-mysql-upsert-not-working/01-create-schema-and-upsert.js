@@ -17,36 +17,74 @@ var filler_column = {
 var models = {
   site: sq.define('site', {
     name: { type: Sequelize.STRING(50) },
-    templateId: { type: Sequelize.STRING(50) },
-    siteName: { type: Sequelize.STRING(50) },
     domain: {
       type: Sequelize.STRING(50),
       primaryKey: true
     },
-    mainEmail: { type: Sequelize.STRING(50) },
-    mainPhone: { type: Sequelize.STRING(50) },
-    mainExt: { type: Sequelize.STRING(50) }
   })
 };
 
-function upsert_data() {
-  return models.site.upsert({
-    name: 'data.name',
-    templateId: 'data.templateId',
-    siteName: 'data.siteName',
-    domain: 'utils.formatDomain(data.domain)',
-    mainEmail: 'data.mainEmail',
-    mainPhone: 'utils.removePhoneNumberFormat(data.mainPhone)',
-    mainExt: ''
-  }, {
-    where: {
-      domain: 'data.domain'
-    }
-  });
+var upsert_workarounds = {
+  find_mutate: function find_mutate(id, data) {
+    return models.site.findById(id)
+    .then(function insert_or_update_instance(instance) {
+      if(instance !== null) {
+        return instance.update(data);
+      }
+      else {
+        return models.site.create(data);
+      }
+    });
+  },
+
+  count_mutate: function upsert_using_count_mutate(id, data) {
+    return models.site.count({ where: { domain: id } })
+    .then(function insert_or_update_instance(count) {
+      if(count !== 0) {
+        return models.site.update(data, { where: { domain: id } });
+      }
+      else {
+        return models.site.create(data);
+      }
+    });
+  }
+};
+
+// Functions for promise chain
+function upsert_instance_1() {
+  return models.site.upsert({ name: 'name1', domain: 'instance1', });
 }
 
-function find_all_from_table() {
-  return models.site.findAll({});
+function upsert_instance_1_modified() {
+  return models.site.upsert({ name: 'name1--new', domain: 'instance1' });
+}
+
+function find_mutate_instance_2_insert() {
+  return upsert_workarounds.find_mutate('instance2', { name: 'name2', domain: 'instance2' });
+}
+
+function find_mutate_instance_2_update() {
+ return upsert_workarounds.find_mutate('instance2', { name: 'name2--new', domain: 'instance2' });
+}
+
+function count_mutate_instance_3_insert() {
+  return upsert_workarounds.count_mutate('instance3', { name: 'name3', domain: 'instance3' });
+}
+
+function count_mutate_instance_3_update() {
+  return upsert_workarounds.count_mutate('instance3', { name: 'name3--new', domain: 'instance3' });
+}
+
+function raw_instance_4_insert() {
+  return upsert_workarounds.raw_query('instance4', { name: 'name4', domain: 'instance4' });
+}
+
+function raw_instance_4_update() {
+  return upsert_workarounds.raw_query('instance4', { name: 'name4--new', domain: 'instance4' });
+}
+
+function find_all() {
+  return models.site.findAll();
 }
 
 /**
@@ -55,16 +93,20 @@ function find_all_from_table() {
  * @param  {Object} data       The data to be logged
  * @return {Object}            The data to be logged, unmodified (to allow any promise chain to be continued)
  */
-function print_result(result_set, data) {
-  console.log('RESULT SET:        ' + result_set);
-  console.log(JSON.stringify(data, null, 2));
+function print_upsert_result(description, result) {
+  console.log(description + ': ' + result);
   console.log();
-  return data;
+  return result;
+}
+
+function print_find_result(result) {
+  console.log();
+  console.log(JSON.stringify(result, null, 2));
+  console.log();
 }
 
 /**
- * Swallow rejected promises. There'll be at least one from a failed find, this allows other find attempts to proceed
- * in the Promise.all
+ * Log and swallow rejected promises.
  */
 function swallow_rejected_promise(result_set, err) {
   console.warn('REJECTED PROMISE: ' + result_set + ' -- ' + err);
@@ -74,13 +116,24 @@ function swallow_rejected_promise(result_set, err) {
 }
 
 sq.sync({ force: true })
-.then(upsert_data)
-.then(print_result.bind(null, 'Return value of upsert - should be true'))
-.then(find_all_from_table)
-.then(print_result.bind(null, 'Result of findAll'))
-.then(upsert_data)
-.then(print_result.bind(null, 'Return value of upsert - should be false'))
+.then(function() { console.log('################ Demo\'ing upsert behavior and no-changes issue ################'); })
+.then(upsert_instance_1)
+.then(print_upsert_result.bind(null, 'Upsert inserting, result should be true'))
+.then(upsert_instance_1)
+.then(print_upsert_result.bind(null, 'ISSUE: Upsert making no changes, result should be false'))
+.then(upsert_instance_1_modified)
+.then(print_upsert_result.bind(null, 'Upsert updating, result should be false'))
+.then(upsert_instance_1)
+.then(print_upsert_result.bind(null, 'Upsert updating, result should be false'))
+.then(function() { console.log('################ Demonstrating work around 1 ################'); })
+.then(find_mutate_instance_2_insert)
+.then(find_mutate_instance_2_update)
+.then(count_mutate_instance_3_insert)
+.then(count_mutate_instance_3_update)
+.then(function() { console.log('##################### Printing findAll  #####################'); })
+.then(find_all)
+.then(print_find_result)
 .catch(swallow_rejected_promise.bind(null, 'main promise chain'))
 .finally(function() {
   sq.close();
-})
+});
