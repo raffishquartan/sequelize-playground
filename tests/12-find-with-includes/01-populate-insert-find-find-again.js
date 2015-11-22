@@ -60,6 +60,10 @@ function add_associations_to_instance(instance) {
   });
 }
 
+function get_associations_of_instance(instance) {
+  return instance.getDetails();
+}
+
 function print_result_instance_array(result_set, data) {
   console.log();
   console.log('RESULT SET: ' + result_set);
@@ -82,6 +86,9 @@ sq.sync({ force: true })
 .then(find_one_item)
 .then(add_associations_to_instance)
 .then(print_result_instance_array.bind(null, 'Result of include in find'))
+.then(find_one_item)
+.then(get_associations_of_instance)
+.then(print_result_instance_array.bind(null, 'Result of getting associations of instance'))
 .catch(swallow_rejected_promise.bind(null, 'main promise chain'))
 .finally(function() {
   sq.close();
