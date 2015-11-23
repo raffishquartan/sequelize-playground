@@ -125,13 +125,15 @@ Query.prototype.formatResults = function(data) {
   } else if (this.isDescribeQuery()) {
     result = {};
     data.forEach(function(_result) {
-      if (_result.Default)
+      if (_result.Default) {
         _result.Default = _result.Default.replace("('",'').replace("')",'').replace(/'/g,''); /* jshint ignore: line */
+      }
 
       result[_result.Name] = {
         type: _result.Type.toUpperCase(),
         allowNull: (_result.IsNull === 'YES' ? true : false),
-        defaultValue: _result.Default
+        defaultValue: _result.Default,
+        primaryKey: _result.Constraint === 'PRIMARY KEY'
       };
     });
   } else if (this.isShowIndexesQuery()) {
@@ -172,9 +174,11 @@ Query.prototype.formatError = function (err) {
   if (match && match.length > 1) {
     var fields = {}
       , message = 'Validation error'
-      , uniqueKey = this.model.uniqueKeys[match[1]];
+      , uniqueKey = this.model && this.model.uniqueKeys[match[1]];
 
-    if (!!uniqueKey.msg) message = uniqueKey.msg;
+    if (uniqueKey && !!uniqueKey.msg) {
+      message = uniqueKey.msg;
+    }
     if (!!match[2]) {
       var values = match[2].split(',').map(Function.prototype.call, String.prototype.trim);
       if (!!uniqueKey) {
