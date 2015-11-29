@@ -1,6 +1,6 @@
 # sequelize-playground
 
-*A collection of Sequelize test scripts*
+*A collection of Sequelize tests and experiments, along with scripts to make it easy to create new ones*
 
 Each test exists in its own pg schema. After the test has been run for the first time future runs should be idempotent.
 
