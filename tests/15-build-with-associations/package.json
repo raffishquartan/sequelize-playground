@@ -1,0 +1,14 @@
+{
+  "name": "15-build-with-associations",
+  "version": "0.0.0",
+  "description": "https://stackoverflow.com/questions/34059081/how-do-i-reference-an-association-when-creating-a-row-in-sequelize-without-assum",
+  "private": true,
+  "dependencies": {
+    "bluebird": "3.0.5",
+    "lodash": "3.10.1",
+    "pg": "4.2.0",
+    "pg-native": "1.9.0",
+    "pg-hstore": "2.3.2",
+    "sequelize": "3.14.2"
+  }
+}
