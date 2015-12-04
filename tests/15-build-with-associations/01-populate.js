@@ -5,7 +5,7 @@ var Sequelize = require('sequelize');
 var _ = require('lodash');
 
 var sq_config = require('../sequelize-config-pg');
-sq_config.options.define.schema = 's14';
+sq_config.options.define.schema = 's15';
 sq_config.options.define.paranoid = false;
 var sq = new Sequelize(sq_config.database, sq_config.username, sq_config.password, sq_config.options);
 
@@ -33,7 +33,7 @@ var models = {
 };
 
 models.Thing.belongsTo(models.User);
-//models.User.hasOne(models.Thing);
+models.User.hasOne(models.Thing);
 
 function print_result(description, result) {
   console.log(description + ':\n' + JSON.stringify(result, null, 2));
@@ -70,6 +70,7 @@ sq.sync({ force: true })
 });
 */
 
+/*
 // Uses setters but Thing exists without associated User inside transaction
 sq.sync({ force: true })
 .then(function() {
@@ -88,3 +89,39 @@ sq.sync({ force: true })
 .finally(function() {
   return sq.close();
 });
+*/
+
+// User created outside of transaction, wrap Thing create in transaction
+///*
+sq.sync({ force: true })
+.then(models.User.create.bind(models.User, { email: 'asdf@example.org' }))
+.then(function(user) {
+  return sq.transaction(function(tr) {
+    return models.Thing.create({name: 'A thing'})
+    .then(function(thing) { return thing.setUser(user); });
+  });
+})
+.then(print_result.bind(null, 'Thing with User...'))
+.catch(swallow_rejected_promise.bind(null, 'main promise chain'))
+.finally(function() {
+  return sq.close();
+});
+//*/
+
+// Do it using a full create - requires User to not already exist
+/*
+sq.sync({ force: true })
+.then(function(user) {
+  return models.Thing.create({ // fails while trying to save included User instance - it is treated as a new record
+    name: 'thingthing',
+    User: { email: 'asdf@example.org' }
+  }, {
+    include: [models.User]
+  });
+})
+.then(print_result.bind(null, 'Thing with User...'))
+.catch(swallow_rejected_promise.bind(null, 'main promise chain'))
+.finally(function() {
+  return sq.close();
+});
+*/
